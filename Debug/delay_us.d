@@ -18,6 +18,7 @@ delay_us.obj: C:/ti/ccs910/ccs/ccs_base/arm/include/CMSIS/cmsis_compiler.h
 delay_us.obj: C:/ti/ccs910/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h
 delay_us.obj: C:/ti/ccs910/ccs/ccs_base/arm/include/system_msp432p401r.h
 delay_us.obj: ../delay_us.h
+delay_us.obj: ../set_DCO.h
 
 ../delay_us.c: 
 C:/ti/ccs910/ccs/ccs_base/arm/include/msp.h: 
@@ -37,3 +38,4 @@ C:/ti/ccs910/ccs/ccs_base/arm/include/CMSIS/cmsis_compiler.h:
 C:/ti/ccs910/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h: 
 C:/ti/ccs910/ccs/ccs_base/arm/include/system_msp432p401r.h: 
 ../delay_us.h: 
+../set_DCO.h: 

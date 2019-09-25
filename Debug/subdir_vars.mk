@@ -10,6 +10,7 @@ CMD_SRCS += \
 
 C_SRCS += \
 ../CPE329.c \
+../LCD.c \
 ../LED_blinky.c \
 ../delay_us.c \
 ../main.c \
@@ -19,6 +20,7 @@ C_SRCS += \
 
 C_DEPS += \
 ./CPE329.d \
+./LCD.d \
 ./LED_blinky.d \
 ./delay_us.d \
 ./main.d \
@@ -28,6 +30,7 @@ C_DEPS += \
 
 OBJS += \
 ./CPE329.obj \
+./LCD.obj \
 ./LED_blinky.obj \
 ./delay_us.obj \
 ./main.obj \
@@ -37,6 +40,7 @@ OBJS += \
 
 OBJS__QUOTED += \
 "CPE329.obj" \
+"LCD.obj" \
 "LED_blinky.obj" \
 "delay_us.obj" \
 "main.obj" \
@@ -46,6 +50,7 @@ OBJS__QUOTED += \
 
 C_DEPS__QUOTED += \
 "CPE329.d" \
+"LCD.d" \
 "LED_blinky.d" \
 "delay_us.d" \
 "main.d" \
@@ -55,6 +60,7 @@ C_DEPS__QUOTED += \
 
 C_SRCS__QUOTED += \
 "../CPE329.c" \
+"../LCD.c" \
 "../LED_blinky.c" \
 "../delay_us.c" \
 "../main.c" \
