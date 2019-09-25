@@ -10,6 +10,7 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./CPE329.obj" \
 "./LED_blinky.obj" \
 "./delay_us.obj" \
 "./main.obj" \
@@ -159,8 +160,8 @@ CPE329.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "LED_blinky.obj" "delay_us.obj" "main.obj" "set_DCO.obj" "startup_msp432p401r_ccs.obj" "system_msp432p401r.obj" 
-	-$(RM) "LED_blinky.d" "delay_us.d" "main.d" "set_DCO.d" "startup_msp432p401r_ccs.d" "system_msp432p401r.d" 
+	-$(RM) "CPE329.obj" "LED_blinky.obj" "delay_us.obj" "main.obj" "set_DCO.obj" "startup_msp432p401r_ccs.obj" "system_msp432p401r.obj" 
+	-$(RM) "CPE329.d" "LED_blinky.d" "delay_us.d" "main.d" "set_DCO.d" "startup_msp432p401r_ccs.d" "system_msp432p401r.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

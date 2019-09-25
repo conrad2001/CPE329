@@ -25,12 +25,10 @@ void set_DCO(uint32_t SEL_DCO_FREQ){
 }
 
 void MCLK_out(){
-    P4->DIR |= BIT0;    //set direction = out
+    P4->DIR |= BIT3;    //set direction = out
     //select module 1 (MCLK)
     P4->SEL0 |= BIT3;
     P4->SEL1 &= ~BIT3;
-    //enable P4.3 port output
-    P4->OUT |= BIT3;
 }
 
 /*Code for setting Vcore to Level 1 for 48 MHz operation*/

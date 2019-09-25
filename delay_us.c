@@ -14,22 +14,22 @@ uint32_t i;
 void delay_us(uint32_t delay){
     switch (CS->CTL0){
         case CS_CTL0_DCORSEL_0:
-            delay *= 0.15;
+            delay *= 0.0470675;
             break;
         case CS_CTL0_DCORSEL_1:
-            delay *= 0.3;
+            delay *= 0.09412;
             break;
         case CS_CTL0_DCORSEL_2:
-            delay *= 0.6;
+            delay *= 0.18827;
             break;
         case CS_CTL0_DCORSEL_3:
-            delay *= 1.2;
+            delay *= 0.37654;
             break;
         case CS_CTL0_DCORSEL_4:
-            delay *= 2.4;
+            delay *= 0.75308;
             break;
         case CS_CTL0_DCORSEL_5:
-            delay *= 4.8;
+            delay *= 1.14965;
             break;
     }
     for (i = delay; i > 0; i--);        // Delay

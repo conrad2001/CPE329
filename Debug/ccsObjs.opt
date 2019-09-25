@@ -1,1 +1,1 @@
-"./LED_blinky.obj" "./delay_us.obj" "./main.obj" "./set_DCO.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd" -llibc.a 
+"./CPE329.obj" "./LED_blinky.obj" "./delay_us.obj" "./main.obj" "./set_DCO.obj" "./startup_msp432p401r_ccs.obj" "./system_msp432p401r.obj" "../msp432p401r.cmd" -llibc.a 

@@ -1,6 +1,7 @@
 # FIXED
 
 main.obj: ../main.c
+main.obj: ../CPE329.h
 main.obj: C:/ti/ccs910/ccs/ccs_base/arm/include/msp.h
 main.obj: C:/ti/ccs910/ccs/ccs_base/arm/include/msp432p401r.h
 main.obj: C:/ti/ccs910/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include/stdint.h
@@ -17,12 +18,12 @@ main.obj: C:/ti/ccs910/ccs/ccs_base/arm/include/CMSIS/core_cm4.h
 main.obj: C:/ti/ccs910/ccs/ccs_base/arm/include/CMSIS/cmsis_compiler.h
 main.obj: C:/ti/ccs910/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h
 main.obj: C:/ti/ccs910/ccs/ccs_base/arm/include/system_msp432p401r.h
-main.obj: ../CPE329.h
 main.obj: ../set_DCO.h
 main.obj: ../LED_blinky.h
 main.obj: ../delay_us.h
 
 ../main.c: 
+../CPE329.h: 
 C:/ti/ccs910/ccs/ccs_base/arm/include/msp.h: 
 C:/ti/ccs910/ccs/ccs_base/arm/include/msp432p401r.h: 
 C:/ti/ccs910/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include/stdint.h: 
@@ -39,7 +40,6 @@ C:/ti/ccs910/ccs/ccs_base/arm/include/CMSIS/core_cm4.h:
 C:/ti/ccs910/ccs/ccs_base/arm/include/CMSIS/cmsis_compiler.h: 
 C:/ti/ccs910/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h: 
 C:/ti/ccs910/ccs/ccs_base/arm/include/system_msp432p401r.h: 
-../CPE329.h: 
 ../set_DCO.h: 
 ../LED_blinky.h: 
 ../delay_us.h: 

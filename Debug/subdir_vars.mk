@@ -9,6 +9,7 @@ CMD_SRCS += \
 ../msp432p401r.cmd 
 
 C_SRCS += \
+../CPE329.c \
 ../LED_blinky.c \
 ../delay_us.c \
 ../main.c \
@@ -17,6 +18,7 @@ C_SRCS += \
 ../system_msp432p401r.c 
 
 C_DEPS += \
+./CPE329.d \
 ./LED_blinky.d \
 ./delay_us.d \
 ./main.d \
@@ -25,6 +27,7 @@ C_DEPS += \
 ./system_msp432p401r.d 
 
 OBJS += \
+./CPE329.obj \
 ./LED_blinky.obj \
 ./delay_us.obj \
 ./main.obj \
@@ -33,6 +36,7 @@ OBJS += \
 ./system_msp432p401r.obj 
 
 OBJS__QUOTED += \
+"CPE329.obj" \
 "LED_blinky.obj" \
 "delay_us.obj" \
 "main.obj" \
@@ -41,6 +45,7 @@ OBJS__QUOTED += \
 "system_msp432p401r.obj" 
 
 C_DEPS__QUOTED += \
+"CPE329.d" \
 "LED_blinky.d" \
 "delay_us.d" \
 "main.d" \
@@ -49,6 +54,7 @@ C_DEPS__QUOTED += \
 "system_msp432p401r.d" 
 
 C_SRCS__QUOTED += \
+"../CPE329.c" \
 "../LED_blinky.c" \
 "../delay_us.c" \
 "../main.c" \
