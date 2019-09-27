@@ -10,15 +10,11 @@
 
 /* Instruction Description from page 18 http://www.newhavendisplay.com/app_notes/ST7066U.pdf*/
 void Clear_LCD(){
-    RS_0;       //INSTRUCTION_REGISTER_ENABLE
-    WRITE_ENABLE;
     CLEAR_DISPLAY;
     delay_us(2000);   //minimum delay 1.52ms
 }
 
 void Home_LCD(){
-    RS_0;       //INSTRUCTION_REGISTER_ENABLE
-    WRITE_ENABLE;
     RETURN_HOME;
     delay_us(2000);    //minimum delay 1.52ms
 }
@@ -26,7 +22,7 @@ void Home_LCD(){
 void command(uint8_t cmd){
     check_busy();
     WRITE_ENABLE;
-    RS_0;
+    RS_0;           //INSTRUCTION_REGISTER_ENABLE
     P7->OUT = cmd;
     write_trigger();
 }
@@ -85,12 +81,14 @@ void Init_LCD(){
     WAKE_UP;            //wake up #3
     delay_us(200);      //must wait 160us, busy flag not available
     FUNCTON_SET_8BITS;  //Function set: 8-bit/2-line
-    set_cursor((uint8_t) BIT4);   //set cursor moving & left shift
+    command((uint8_t) BIT4);   //set cursor moving & left shift
     DISPLAY_ON;
     ENTRY_MODE_SET;
 }
 
-void set_cursor(uint8_t DDRAM_addr){
+void set_cursor(uint8_t column, uint8_t row){
+    row = (row < 2) ? ( row << 6 ) : 0;
+    uint8_t DDRAM_addr = row | column;
     command((uint8_t) BIT7 | DDRAM_addr); //enable bit 7 and pass in DDRAM address to set cursor position
 
 }

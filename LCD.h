@@ -46,7 +46,7 @@ void Write_char_LCD(uint8_t c);
 void Write_string_LCD(char* s);
 void check_busy();
 void Init_LCD();        //initialize LCD
-void set_cursor(uint8_t DDRAM_addr);      //set cursor position
+void set_cursor(uint8_t column, uint8_t row);      //set cursor position
 #endif /* LCD_H_ */
 
 

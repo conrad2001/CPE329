@@ -12,7 +12,16 @@
 #include "delay_us.h"
 #include "set_DCO.h"
 
-uint32_t i;
+uint32_t i, j;
+void delay_s(uint32_t delay){
+    for(j = delay; j > 0; j--)
+        for(i = 1000000; i > 0; i--);
+}
+
+void delay_ms(uint32_t delay){
+    for(j = delay; j > 0; j--)
+        for(i = 1000; i > 0; i--);
+}
 
 void delay_us(uint32_t delay){
     set_delay(&delay);

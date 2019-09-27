@@ -18,10 +18,9 @@ void Assignment_3(){        //clear, home, print LCD
     set_DCO(FREQ_12_MHz);
     Init_LCD();     //initialize LCD
     Clear_LCD();
-    Write_string_LCD("Hello World");
-    set_cursor(0x40);
-    Write_string_LCD("Hello World");
-
+    while(1){
+        Japanese_LCD_GIF();
+    }
 }
 
 
@@ -40,4 +39,21 @@ void Assignment_2()     //delay LED for 40ms
             run_delay_us();
     }
 
+}
+
+
+void Japanese_LCD_GIF(){
+    Clear_LCD();
+    Home_LCD();
+    Write_string_LCD("(*^^)(^^*)");
+    delay_s(1);
+    Clear_LCD();
+    Home_LCD();
+    Write_string_LCD("(*^^)^^*)");
+    char buf[] = {j_CHI, j_yu, j_tsu};
+    Write_string_LCD(buf);
+    set_cursor(0,1);
+    char buf2[] = {j_SHI, j_A, j_WA, j_SE, '!'};
+    Write_string_LCD(buf2);
+    delay_s(1);
 }
