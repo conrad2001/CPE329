@@ -14,8 +14,12 @@
 
 uint32_t i;
 
+void delay_us(uint32_t delay){
+    set_delay(&delay);
+    run_delay_us();
+}
 
-void delay_us(){
+void run_delay_us(){
     for (i = delay_time; i > 0; i--);        // Delay
 }
 

@@ -6,5 +6,5 @@
 
 void main(void)
 {
-    Assignment_2();
+    Assignment_3();
 }

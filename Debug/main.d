@@ -21,6 +21,7 @@ main.obj: C:/ti/ccs910/ccs/ccs_base/arm/include/system_msp432p401r.h
 main.obj: ../set_DCO.h
 main.obj: ../LED_blinky.h
 main.obj: ../delay_us.h
+main.obj: ../LCD.h
 
 ../main.c: 
 ../CPE329.h: 
@@ -43,3 +44,4 @@ C:/ti/ccs910/ccs/ccs_base/arm/include/system_msp432p401r.h:
 ../set_DCO.h: 
 ../LED_blinky.h: 
 ../delay_us.h: 
+../LCD.h: 

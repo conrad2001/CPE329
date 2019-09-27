@@ -12,8 +12,9 @@
 #include "set_DCO.h"
 #include "LED_blinky.h"
 #include "delay_us.h"
-
+#include "LCD.h"
 
 void Assignment_2();
+void Assignment_3();
 
 #endif /* CPE329_H_ */

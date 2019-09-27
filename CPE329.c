@@ -13,13 +13,23 @@
  * main.c
  */
 
+void Assignment_3(){        //clear, home, print LCD
+    WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;     // stop watchdog timer
+    set_DCO(FREQ_12_MHz);
+    Init_LCD();     //initialize LCD
+    Clear_LCD();
+    Write_string_LCD("Hello World");
+    set_cursor(0x40);
+    Write_string_LCD("Hello World");
+
+}
 
 
-void Assignment_2()
+void Assignment_2()     //delay LED for 40ms
 {
     #include "delay_us.h"
     //set delay time up to 50000 microsecond
-    delay_time = 40;                             //variable "delay_time" declared in delay_us.h
+    delay_time = 50000;                             //variable "delay_time" declared in delay_us.h
     WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;     // stop watchdog timer
     LED_SETUP();
     set_DCO(FREQ_1p5_MHz);
@@ -27,7 +37,7 @@ void Assignment_2()
     set_delay(&delay_time);                     //setup delay time pass by reference
     while(1){
             P1->OUT ^= BIT0;                    // XOR P1.0 (turn LED on and off)
-            delay_us();
+            run_delay_us();
     }
 
 }

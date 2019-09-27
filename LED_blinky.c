@@ -2,7 +2,7 @@
  * LED_blnky.c
  *
  *  Created on: Sep 21, 2019
- *      Author: Conrad Chan
+ *      Author: User01
  */
 
 
