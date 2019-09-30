@@ -2,7 +2,7 @@
  * LED_blnky.c
  *
  *  Created on: Sep 21, 2019
- *      Author: Conrad Chan
+ *      Author: User01
  */
 
 
@@ -18,5 +18,5 @@ P1->SEL1 &= ~BIT0;  //enable bit 0 in SEL1
 
 //set LED output
 P1->DIR |= BIT0;    //set direction = output
-//P1->OUT |= BIT0;    //enable P1.0 (LED)
+P1->OUT &= ~BIT0;    //initialize P1.0 (LED)
 }
