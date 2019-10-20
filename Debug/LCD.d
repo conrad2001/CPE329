@@ -17,6 +17,8 @@ LCD.obj: C:/ti/ccs910/ccs/ccs_base/arm/include/CMSIS/core_cm4.h
 LCD.obj: C:/ti/ccs910/ccs/ccs_base/arm/include/CMSIS/cmsis_compiler.h
 LCD.obj: C:/ti/ccs910/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h
 LCD.obj: C:/ti/ccs910/ccs/ccs_base/arm/include/system_msp432p401r.h
+LCD.obj: ../LCD.h
+LCD.obj: ../delay_us.h
 
 ../LCD.c: 
 C:/ti/ccs910/ccs/ccs_base/arm/include/msp.h: 
@@ -35,3 +37,5 @@ C:/ti/ccs910/ccs/ccs_base/arm/include/CMSIS/core_cm4.h:
 C:/ti/ccs910/ccs/ccs_base/arm/include/CMSIS/cmsis_compiler.h: 
 C:/ti/ccs910/ccs/ccs_base/arm/include/CMSIS/cmsis_ccs.h: 
 C:/ti/ccs910/ccs/ccs_base/arm/include/system_msp432p401r.h: 
+../LCD.h: 
+../delay_us.h: 
