@@ -13,18 +13,38 @@
  * main.c
  */
 /*function generator*/
-void Project_2(){
-    #define SQUARE 0
-    #define SINE 1
-    #define SAWTOOTH 2
+void Project_2(){     //Function Generator
+    char key;
+    uint16_t freq = 100, wave_type, Duty_Cycle = 50;
+    Init_LCD();
     /*P10.3 = DAC_CS    P1.5 = SCL   P1.7 = SOMI     P1.6 = SIMO*/
     WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;     // stop watchdog timer
-    FuncGen_setup(SAWTOOTH, 13, 500);
-    while(1) DAC_output(voltage_bit);
+    //FuncGen_setup(SAWTOOTH, 13, 500);
+    set_DCO(FREQ_24_MHz);
+
+    while(1) {
+        key = scan_key();
+        if(key){
+            Write_char_LCD(key);
+            if (key > '0' && key < '6')
+                freq = ( key - '0' ) * 100;
+            switch(key){
+                case '#': Duty_Cycle += ( Duty_Cycle < 90 ) ? 10 : 0; break;       //key = '*'
+                case '*': Duty_Cycle -= ( Duty_Cycle > 10 ) ? 10 : 0; break;       //key = '#'
+                case '0': Duty_Cycle = 50;  break;
+            }
+            if (key > '6' && key <= '9')
+                wave_type = ( key - '7' );
+            delay_ms(200);
+            continue;
+        }
+        FuncGen_setup(wave_type, Duty_Cycle, freq);
+        DAC_output(voltage_bit);
+    }
 }
 
 
-void Assignment_7(){
+void Assignment_7(){    //SPI and DAC
     /*P10.3 = DAC_CS    P1.5 = SCL   P1.7 = SOMI     P1.6 = SIMO*/
     WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;     // stop watchdog timer
     timerA0_setup();
@@ -55,7 +75,7 @@ void Assignment_5(){
 }
 
 
-void Assignment_4(){
+void Assignment_4(){    //keypad, print entered key to LCD
     char key;
     WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;     // stop watchdog timer
     set_DCO(FREQ_1p5_MHz);

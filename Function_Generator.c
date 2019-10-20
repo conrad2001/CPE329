@@ -21,39 +21,47 @@ enum waveform{
 };
 
 uint8_t _waveform, _DutyCycle;
-uint16_t sine_bit[314], _CCR_bit;
+uint16_t sine_bit[314], _CCR_bit, _freq;
 
 void FuncGen_setup(uint8_t waveform, uint8_t DutyCycle, uint16_t freq){
-    set_DCO(FREQ_24_MHz);
-    _waveform = waveform;
-    _DutyCycle = DutyCycle;
-
-    uint16_t i;
-    TIMER_A1->CCR[0] = 0;   //add 1 clock cycle  @ 12MHz/ 100Hz
-    TIMER_A1->CCTL[0] = TIMER_A_CCTLN_CCIE; //enable interrupt, Toggle/reset mode
-    //select SMCLK | select continuous mode
-    TIMER_A1->CTL = TIMER_A_CTL_SSEL__SMCLK | TIMER_A_CTL_MC__CONTINUOUS;
-    ISER_SEL(TA1_0_IRQn);       //enable CCR0 timer A1 interrupt in NVIC
-    TIMER_A1->CCR[0] = 0;   //add 1 clock cycle  @ 12MHz/ 100Hz
-    switch(waveform){
-    case square_wave:
-        //adjust bit based on freq
-        _CCR_bit = ( 2380 * 100 / freq );
-        break;
-    case sine_wave:
-        //adjust bit based on freq
-        _CCR_bit = ( 765 * 100 / freq );
-        //load in values of sine into an array
-        for ( i = 0; i < 314 ; i++)
-           sine_bit[i] = ( 1.5 * sin( (float) i / 50 ) + 1.5 ) / 3.3 * ( 1 << 12) ;
-        break;
-    case sawtooth_wave:
-        //adjust bit based on freq
-        _CCR_bit = ( 967 * 100 / freq );
-        break;
+    static uint16_t i, j;
+    if (!j){
+        set_DCO(FREQ_24_MHz);
+        TIMER_A1->CCR[0] = 0;   //add 1 clock cycle  @ 12MHz/ 100Hz
+        TIMER_A1->CCTL[0] = TIMER_A_CCTLN_CCIE; //enable interrupt, Toggle/reset mode
+        //select SMCLK | select continuous mode
+        TIMER_A1->CTL = TIMER_A_CTL_SSEL__SMCLK | TIMER_A_CTL_MC__CONTINUOUS;
+        ISER_SEL(TA1_0_IRQn);       //enable CCR0 timer A1 interrupt in NVIC
+        TIMER_A1->CCR[0] = 0;   //add 1 clock cycle  @ 12MHz/ 100Hz
+        __enable_irq();     //enable interrupt globally
+        j++;
     }
 
-    __enable_irq();     //enable interrupt globally
+    if(_freq != freq || _waveform != waveform || _DutyCycle != DutyCycle){
+        if ( waveform < 3 )
+            _waveform = waveform;
+        if ( DutyCycle < 101)
+            _DutyCycle = DutyCycle;
+        if( freq < 501 )
+            _freq = freq;
+        switch(_waveform){
+            case square_wave:
+                //adjust bit based on freq
+                _CCR_bit = ( 2380 * 100 / _freq );
+                break;
+            case sine_wave:
+                //adjust bit based on freq
+                _CCR_bit = ( 765 * 100 / _freq );
+                //load in values of sine into an array
+                for ( i = 0; i < 314 ; i++)
+                   sine_bit[i] = ( 1.5 * sin( (float) i / 50 ) + 1.5 ) / 3.3 * ( 1 << 12) ;
+                break;
+            case sawtooth_wave:
+                //adjust bit based on freq
+                _CCR_bit = ( 638 * 100 / _freq );
+                break;
+        }
+    }
 }
 
 
