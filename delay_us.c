@@ -15,7 +15,21 @@
 uint32_t i;
 
 
-void delay_us(){
+void delay_s(uint16_t delay){
+    delay_us(delay*1000000);
+}
+
+void delay_ms(uint32_t delay){
+    delay_us(delay*1000);
+}
+
+void delay_us(uint32_t delay){
+    delay_time = delay;
+    set_delay(&delay_time);
+    run_delay_us();
+}
+
+void run_delay_us(){
     for (i = delay_time; i > 0; i--);        // Delay
 }
 
@@ -43,4 +57,3 @@ void set_delay(uint32_t *delay_ptr){
                 break;
         }
 }
-

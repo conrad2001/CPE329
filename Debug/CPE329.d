@@ -21,6 +21,14 @@ CPE329.obj: ../CPE329.h
 CPE329.obj: ../set_DCO.h
 CPE329.obj: ../LED_blinky.h
 CPE329.obj: ../delay_us.h
+CPE329.obj: ../LCD.h
+CPE329.obj: ../Japanese_char.h
+CPE329.obj: ../Keypad.h
+CPE329.obj: ../ISR.h
+CPE329.obj: ../SPI.h
+CPE329.obj: ../Timer_A0.h
+CPE329.obj: ../Function_Generator.h
+CPE329.obj: ../UART.h
 
 ../CPE329.c: 
 C:/ti/ccs910/ccs/ccs_base/arm/include/msp.h: 
@@ -43,3 +51,11 @@ C:/ti/ccs910/ccs/ccs_base/arm/include/system_msp432p401r.h:
 ../set_DCO.h: 
 ../LED_blinky.h: 
 ../delay_us.h: 
+../LCD.h: 
+../Japanese_char.h: 
+../Keypad.h: 
+../ISR.h: 
+../SPI.h: 
+../Timer_A0.h: 
+../Function_Generator.h: 
+../UART.h: 
