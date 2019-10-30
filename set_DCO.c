@@ -20,7 +20,7 @@ void set_DCO(uint32_t SEL_DCO_FREQ){
     }
     CS->CTL0 = 0;                    // clear register CTL0
     CS->CTL0 = SEL_DCO_FREQ;        /* select DCO center frequency */
-    CS->CTL1 = CS_CTL1_SELA_2 | CS_CTL1_SELS_3 | CS_CTL1_SELM_3;    // select clock sources
+    CS->CTL1 = CS_CTL1_SELA__REFOCLK | CS_CTL1_SELS__DCOCLK | CS_CTL1_SELM__DCOCLK;    // select clock sources
     CS->KEY = 0;                    // Lock CS module from unintended accesses
 }
 

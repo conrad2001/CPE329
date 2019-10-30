@@ -10,7 +10,10 @@
 
 uint32_t delay_time;
 
-void delay_us();
+void delay_s(uint16_t delay);
+void delay_ms(uint32_t delay);
+void delay_us(uint32_t delay);
+void run_delay_us();
 void set_delay(uint32_t *delay_ptr);
 
 #endif /* DELAY_US_H_ */

@@ -4,7 +4,8 @@
  * main.c
  */
 
-void main(void)
-{
-    Assignment_2();
+
+void main(void){
+    Assignment_9();
 }
+

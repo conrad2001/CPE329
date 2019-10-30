@@ -21,6 +21,20 @@ main.obj: C:/ti/ccs910/ccs/ccs_base/arm/include/system_msp432p401r.h
 main.obj: ../set_DCO.h
 main.obj: ../LED_blinky.h
 main.obj: ../delay_us.h
+main.obj: ../LCD.h
+main.obj: ../Japanese_char.h
+main.obj: ../Keypad.h
+main.obj: ../ISR.h
+main.obj: ../SPI.h
+main.obj: ../Timer_A0.h
+main.obj: ../Function_Generator.h
+main.obj: ../UART.h
+main.obj: ../ADC.h
+main.obj: C:/ti/ccs910/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include/math.h
+main.obj: C:/ti/ccs910/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include/_ti_config.h
+main.obj: C:/ti/ccs910/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include/linkage.h
+main.obj: C:/ti/ccs910/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include/_defs.h
+main.obj: C:/ti/ccs910/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include/machine/_limits.h
 
 ../main.c: 
 ../CPE329.h: 
@@ -43,3 +57,17 @@ C:/ti/ccs910/ccs/ccs_base/arm/include/system_msp432p401r.h:
 ../set_DCO.h: 
 ../LED_blinky.h: 
 ../delay_us.h: 
+../LCD.h: 
+../Japanese_char.h: 
+../Keypad.h: 
+../ISR.h: 
+../SPI.h: 
+../Timer_A0.h: 
+../Function_Generator.h: 
+../UART.h: 
+../ADC.h: 
+C:/ti/ccs910/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include/math.h: 
+C:/ti/ccs910/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include/_ti_config.h: 
+C:/ti/ccs910/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include/linkage.h: 
+C:/ti/ccs910/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include/_defs.h: 
+C:/ti/ccs910/ccs/tools/compiler/ti-cgt-arm_18.12.2.LTS/include/machine/_limits.h: 
