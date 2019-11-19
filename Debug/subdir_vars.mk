@@ -12,6 +12,7 @@ C_SRCS += \
 ../ADC.c \
 ../CPE329.c \
 ../Function_Generator.c \
+../I2C.c \
 ../ISR.c \
 ../Keypad.c \
 ../LCD.c \
@@ -30,6 +31,7 @@ C_DEPS += \
 ./ADC.d \
 ./CPE329.d \
 ./Function_Generator.d \
+./I2C.d \
 ./ISR.d \
 ./Keypad.d \
 ./LCD.d \
@@ -48,6 +50,7 @@ OBJS += \
 ./ADC.obj \
 ./CPE329.obj \
 ./Function_Generator.obj \
+./I2C.obj \
 ./ISR.obj \
 ./Keypad.obj \
 ./LCD.obj \
@@ -66,6 +69,7 @@ OBJS__QUOTED += \
 "ADC.obj" \
 "CPE329.obj" \
 "Function_Generator.obj" \
+"I2C.obj" \
 "ISR.obj" \
 "Keypad.obj" \
 "LCD.obj" \
@@ -84,6 +88,7 @@ C_DEPS__QUOTED += \
 "ADC.d" \
 "CPE329.d" \
 "Function_Generator.d" \
+"I2C.d" \
 "ISR.d" \
 "Keypad.d" \
 "LCD.d" \
@@ -102,6 +107,7 @@ C_SRCS__QUOTED += \
 "../ADC.c" \
 "../CPE329.c" \
 "../Function_Generator.c" \
+"../I2C.c" \
 "../ISR.c" \
 "../Keypad.c" \
 "../LCD.c" \

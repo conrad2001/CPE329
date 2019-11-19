@@ -12,7 +12,27 @@
 /**
  * main.c
  */
-void Assignment_9(){
+void Assignment_10(){   //I2C
+    set_DCO(FREQ_3_MHz);      //set DCO frequency
+    CS->KEY = CS_KEY_VAL;
+    CS->CLKEN |= CS_CLKEN_REFOFSEL | CS_CLKEN_REFO_EN;  //setup 128kHz for ACLK
+    CS->KEY = 0;
+    EUSCI_B0_I2C_setup();   //setup I2C
+    I2C_slave_addr(0x50);  //set slave address
+    EUSCI_A0_UART_setup();
+    EEPROM_mem_addr(0x2222);      //point to memory address
+    while(1){
+        I2C_Write_Char(0x32);        //write character
+        char read_char = I2C_Read_Char();
+        EUSCI_A0->TXBUF = read_char ;     //writing TXBUF clears TXIFG
+        while(!(EUSCI_A0 ->IFG & EUSCI_A_IFG_TXIFG));
+    }
+}
+
+
+
+
+void Assignment_9(){    //UART
     const uint8_t decimal_point = 5;
     EUSCI_A0_UART_setup();
     ADC_SETUP();

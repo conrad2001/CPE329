@@ -13,6 +13,7 @@ ORDERED_OBJS += \
 "./ADC.obj" \
 "./CPE329.obj" \
 "./Function_Generator.obj" \
+"./I2C.obj" \
 "./ISR.obj" \
 "./Keypad.obj" \
 "./LCD.obj" \
@@ -169,8 +170,8 @@ CPE329.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "ADC.obj" "CPE329.obj" "Function_Generator.obj" "ISR.obj" "Keypad.obj" "LCD.obj" "LED_blinky.obj" "SPI.obj" "Timer_A0.obj" "UART.obj" "delay_us.obj" "main.obj" "millis.obj" "set_DCO.obj" "startup_msp432p401r_ccs.obj" "system_msp432p401r.obj" 
-	-$(RM) "ADC.d" "CPE329.d" "Function_Generator.d" "ISR.d" "Keypad.d" "LCD.d" "LED_blinky.d" "SPI.d" "Timer_A0.d" "UART.d" "delay_us.d" "main.d" "millis.d" "set_DCO.d" "startup_msp432p401r_ccs.d" "system_msp432p401r.d" 
+	-$(RM) "ADC.obj" "CPE329.obj" "Function_Generator.obj" "I2C.obj" "ISR.obj" "Keypad.obj" "LCD.obj" "LED_blinky.obj" "SPI.obj" "Timer_A0.obj" "UART.obj" "delay_us.obj" "main.obj" "millis.obj" "set_DCO.obj" "startup_msp432p401r_ccs.obj" "system_msp432p401r.obj" 
+	-$(RM) "ADC.d" "CPE329.d" "Function_Generator.d" "I2C.d" "ISR.d" "Keypad.d" "LCD.d" "LED_blinky.d" "SPI.d" "Timer_A0.d" "UART.d" "delay_us.d" "main.d" "millis.d" "set_DCO.d" "startup_msp432p401r_ccs.d" "system_msp432p401r.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

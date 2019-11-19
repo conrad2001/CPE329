@@ -22,6 +22,7 @@
 #include "UART.h"
 #include "ADC.h"
 #include <math.h>
+#include "I2C.h"
 
 void Project_2();
 void Assignment_2();
@@ -31,6 +32,7 @@ void Assignment_5();
 void Assignment_7();
 void Assignment_8();
 void Assignment_9();
+void Assignment_10();
 void Timer_class_example();
 void Japanese_LCD_GIF();
 void test_int_char();

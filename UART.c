@@ -17,8 +17,13 @@ char* string;
 
 /*eUCSI_A0->UART
  *initializing eUSCI module 25.3.1 TR manual*/
+
+
+
+
+
+
 void EUSCI_A0_UART_setup(){
-    set_DCO(FREQ_3_MHz);
     EUSCI_A0->CTLW0 = EUSCI_A_CTLW0_SWRST;         //set UCSWRST;
     //Initialize all eUSCI registers with UCSWRST = 1 (including UCxCTL1).
     //clear_EUSCI_A0_reg();
@@ -40,10 +45,10 @@ void EUSCI_A0_UART_setup(){
     P1->SEL0 |=  A0_RX | A0_TX;    //select TX, RX page 139 MSP401 data sheet
     P1->SEL1 &=  ~( A0_RX | A0_TX );
     EUSCI_A0->CTLW0 &= ~EUSCI_A_CTLW0_SWRST;    //clear SWRST
-    EUSCI_A0->IE = EUSCI_A_IE_RXIE; //enable RX interrupts
-    //EUSCI_A0->IE = EUSCI_A_IE_TXIE; //enable TX interrupts
+    /*EUSCI_A0->IE = EUSCI_A_IE_RXIE; //enable RX interrupts
+    EUSCI_A0->IE = EUSCI_A_IE_TXIE; //enable TX interrupts
     NVIC->ISER[0] = ( 1 << EUSCIA0_IRQn );
-    __enable_irq();
+    __enable_irq();*/
 }
 
 //print out input value and store to data if space character is being input
